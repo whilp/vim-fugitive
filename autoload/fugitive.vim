@@ -987,6 +987,8 @@ function! fugitive#BufReadStatus() abort
       let cmd = ['status']
     else
       let cmd = [
+            \ '--no-ahead-behind',
+            \ '--untracked-files=no',
             \ '-c', 'status.displayCommentPrefix=true',
             \ '-c', 'color.status=false',
             \ '-c', 'status.short=false',
