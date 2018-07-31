@@ -987,12 +987,10 @@ function! fugitive#BufReadStatus() abort
       let cmd = ['status']
     else
       let cmd = [
-            \ '--no-ahead-behind',
-            \ '--untracked-files=no',
             \ '-c', 'status.displayCommentPrefix=true',
             \ '-c', 'color.status=false',
             \ '-c', 'status.short=false',
-            \ 'status']
+            \ 'status', '--no-ahead-behind', '--untracked-files=no']
     endif
     let cd = exists('*haslocaldir') && haslocaldir() ? 'lcd' : 'cd'
     let cwd = getcwd()
